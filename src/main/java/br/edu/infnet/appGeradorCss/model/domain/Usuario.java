@@ -4,18 +4,22 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Usuario {
-	private Integer IDUsuario;
+	private int IDUsuario;
 	private String NomeUsuario;
 	private String Email;
 	private String Senha;
-	private Date DataRegistro;
+	protected Date DataRegistro;
 	
 	// Construtor padrão
     public Usuario() {
     }
+    
+    public Usuario(int IDUsuario) {
+    	this.IDUsuario = IDUsuario;
+    }
 
     // Construtor com parâmetros
-    public Usuario(Integer IDUsuario, String NomeUsuario, String Email, String Senha, Date DataRegistro) {
+    public Usuario(int IDUsuario, String NomeUsuario, String Email, String Senha, Date DataRegistro) {
         this.IDUsuario = IDUsuario;
         this.NomeUsuario = NomeUsuario;
         this.Email = Email;

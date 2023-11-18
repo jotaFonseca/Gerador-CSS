@@ -1,5 +1,7 @@
 package br.edu.infnet.appGeradorCss.model.domain;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.text.ParseException;
 
 public class BotaoPersonalizado {
 	private int IDBotao;
@@ -13,6 +15,46 @@ public class BotaoPersonalizado {
 	private String OutrasPropCSS;
 	private String CodigoCSSGerado;
 	private Date DataCriacao;
+	
+	public BotaoPersonalizado() {
+	}
+	
+    public BotaoPersonalizado(int IDBotao, String NomeBotao, String CorFundo, String CorTexto, String TamanhoBotao,
+                              String PropriedadesBorda, String EfeitoHover, String TipoFonte, String OutrasPropCSS,
+                              String CodigoCSSGerado, Date DataCriacao) {
+        this.IDBotao = IDBotao;
+        this.NomeBotao = NomeBotao;
+        this.CorFundo = CorFundo;
+        this.CorTexto = CorTexto;
+        this.TamanhoBotao = TamanhoBotao;
+        this.PropriedadesBorda = PropriedadesBorda;
+        this.EfeitoHover = EfeitoHover;
+        this.TipoFonte = TipoFonte;
+        this.OutrasPropCSS = OutrasPropCSS;
+        this.CodigoCSSGerado = CodigoCSSGerado;
+        this.DataCriacao = DataCriacao;
+    }
+
+    public BotaoPersonalizado(int IDBotao, String NomeBotao, String CorFundo, String CorTexto, String TamanhoBotao,
+                              String PropriedadesBorda, String EfeitoHover, String TipoFonte, String OutrasPropCSS,
+                              String CodigoCSSGerado, String dataCriacao) throws ParseException {
+        this(IDBotao, NomeBotao, CorFundo, CorTexto, TamanhoBotao, PropriedadesBorda, EfeitoHover, TipoFonte,
+                OutrasPropCSS, CodigoCSSGerado, new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(dataCriacao));
+    }
+	
+	@Override
+	public String toString() {
+        SimpleDateFormat formatoData = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String dataFormatada = formatoData.format(DataCriacao);
+        
+		return String.format(
+				"ID do Botão: (%d) - Nome do Botão: (%s) - Cor de Fundo: (%s) - Cor do Texto: (%s) - Tamanho do Botão:(%s) - "
+				+ "Propriedades da Borda:(%s) - Efeito Hover:(%s) - Tipo da Fonte:(%s) - Outras Propriedades CSS:(%s) - "
+				+ "Código CSS Gerado:(%s) - Data de Criação:(%s)"
+				, IDBotao, NomeBotao, CorFundo, CorTexto, TamanhoBotao, PropriedadesBorda, EfeitoHover, TipoFonte, OutrasPropCSS, CodigoCSSGerado,
+				dataFormatada);
+	}
+	
 	public int getIDBotao() {
 		return IDBotao;
 	}

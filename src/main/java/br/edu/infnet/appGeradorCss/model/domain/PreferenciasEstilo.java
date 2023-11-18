@@ -1,6 +1,6 @@
 package br.edu.infnet.appGeradorCss.model.domain;
 
-public class PreferenciasEstilo {
+public class PreferenciasEstilo extends Usuario{
 	private int IDPreferencias;
 	private int IDUsuario;
 	private String CorFundoPadrao;
@@ -9,6 +9,33 @@ public class PreferenciasEstilo {
 	private String PropBordaPadrao;
 	private String EfeitoHoverPadrao;
 	private String TipoFontePadrao;
+	
+	public PreferenciasEstilo() {
+		super();
+	}
+	
+    public PreferenciasEstilo(int IDUsuario, int IDPreferencias, String corFundoPadrao, String corTextoPadrao,
+            String tamanhoPadrao, String propBordaPadrao, String efeitoHoverPadrao, String tipoFontePadrao) {
+    	super(IDUsuario);
+
+		this.IDPreferencias = IDPreferencias;
+		this.CorFundoPadrao = corFundoPadrao;
+		this.CorTextoPadrao = corTextoPadrao;
+		this.TamanhoPadrao = tamanhoPadrao;
+		this.PropBordaPadrao = propBordaPadrao;
+		this.EfeitoHoverPadrao = efeitoHoverPadrao;
+		this.TipoFontePadrao = tipoFontePadrao;
+}
+	
+	@Override
+	public String toString() {
+		
+		return String.format(
+				"ID Preferências:(%d) - ID Usuário:(%d) - Cor de Fundo Padrão: (%s) - Cor do Texto Padrão: (%s) - Tamanho Padrão:(%s)"
+				+ "Proporções da Borda Padrão:(%s) - Efeito Hover Padrão:(%s) - Tipo de Fonte Padrão:(%s)",
+				super.toString(),IDPreferencias, IDUsuario, CorFundoPadrao, CorTextoPadrao, TamanhoPadrao, PropBordaPadrao, EfeitoHoverPadrao, TipoFontePadrao);
+	}
+	
 	public int getIDPreferencias() {
 		return IDPreferencias;
 	}
