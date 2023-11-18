@@ -1,15 +1,15 @@
-45678 - Alice Johnson - alice@gmail.com - senha123 - 2023-11-17 10:30:00
-78901 - Bob Smith - bob@yahoo.com - senha456 - 2023-11-17 11:15:30
-23456 - Charlie Brown - charlie@outlook.com - senha789 - 2023-11-17 12:45:20
-78923 - David Davis - david@hotmail.com - senhaabc - 2023-11-17 14:00:45
-12345 - Emma White - emma@gmail.com - senha123 - 2023-11-17 15:20:10
-67890 - Frank Miller - frank@yahoo.com - senha456 - 2023-11-17 16:40:55
-34567 - Grace Turner - grace@outlook.com - senha789 - 2023-11-17 18:05:30
-89012 - Henry Lee - henry@hotmail.com - senhaabc - 2023-11-17 19:30:15
-23456 - Ivy Johnson - ivy@gmail.com - senha123 - 2023-11-17 20:45:45
-78901 - Jack Williams - jack@yahoo.com - senha456 - 2023-11-17 22:10:30
-23456 - Karen Davis - karen@outlook.com - senha789 - 2023-11-17 23:35:20
-45678 - Liam Turner - liam@hotmail.com - senhaabc - 2023-11-18 01:00:00
-78923 - Mia Lee - mia@gmail.com - senha123 - 2023-11-18 02:15:30
-12345 - Noah Brown - noah@yahoo.com - senha456 - 2023-11-18 03:40:10
-67890 - Olivia Smith - olivia@outlook.com - senha789 - 2023-11-18 05:05:45
+45678;Alice Johnson;alice@gmail.com;senha123;2023-11-17 10:30:00
+78901;Bob Smith;bob@yahoo.com;senha456;2023-11-17 11:15:30
+23456;Charlie Brown;charlie@outlook.com;senha789;2023-11-17 12:45:20
+78923;David Davis;david@hotmail.com;senhaabc;2023-11-17 14:00:45
+12345;Emma White;emma@gmail.com;senha123;2023-11-17 15:20:10
+67890;Frank Miller;frank@yahoo.com;senha456;2023-11-17 16:40:55
+34567;Grace Turner;grace@outlook.com;senha789;2023-11-17 18:05:30
+89012;Henry Lee;henry@hotmail.com;senhaabc;2023-11-17 19:30:15
+23456;Ivy Johnson;ivy@gmail.com;senha123;2023-11-17 20:45:45
+78901;Jack Williams;jack@yahoo.com;senha456;2023-11-17 22:10:30
+23456;Karen Davis;karen@outlook.com;senha789;2023-11-17 23:35:20
+45678;Liam Turner;liam@hotmail.com;senhaabc;2023-11-18 01:00:00
+78923;Mia Lee;mia@gmail.com;senha123;2023-11-18 02:15:30
+12345;Noah Brown;noah@yahoo.com;senha456;2023-11-18 03:40:10
+67890;Olivia Smith;olivia@outlook.com;senha789;2023-11-18 05:05:45
