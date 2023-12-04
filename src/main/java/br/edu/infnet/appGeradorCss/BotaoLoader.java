@@ -48,7 +48,7 @@ public class BotaoLoader implements ApplicationRunner{
 		        if(campos.length == 9) {
 			        Botao botao = new Botao();
 			        
-			        botao.setId(Integer.parseInt(campos[0]));
+			        botao.setId(Integer.valueOf(campos[0]));
 			        botao.setNomeBotao(campos[1]);
 			        botao.setCorFundo(campos[2]);
 			        botao.setCorTexto(campos[3]);

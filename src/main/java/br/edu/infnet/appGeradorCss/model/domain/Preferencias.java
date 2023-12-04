@@ -13,9 +13,8 @@ public class Preferencias extends Usuario{
 		super();
 	}
 	
-    public Preferencias(int Id, int IdPref, String corFundoPadrao, String corTextoPadrao,
+    public Preferencias(int IdPref, String corFundoPadrao, String corTextoPadrao,
             String tamanhoPadrao, String bordaPadrao, String hoverPadrao, String fontePadrao) {
-    	super(Id);
 
 		this.IdPref = IdPref;
 		this.CorFundoPadrao = corFundoPadrao;
@@ -28,11 +27,10 @@ public class Preferencias extends Usuario{
 	
 	@Override
 	public String toString() {
-		
 		return String.format(
-				"ID Preferências:(%d) - Cor de Fundo Padrão: (%s) - Cor do Texto Padrão: (%s) - Tamanho Padrão:(%s)"
-				+ "Proporções da Borda Padrão:(%s) - Efeito Hover Padrão:(%s) - Tipo de Fonte Padrão:(%s)",
-				super.toString(),IdPref, CorFundoPadrao, CorTextoPadrao, TamanhoPadrao, BordaPadrao, HoverPadrao, FontePadrao);
+			       "ID Preferências:(%d) - Cor de Fundo Padrão: (%s) - Cor do Texto Padrão: (%s) - Tamanho Padrão:(%s)"
+			       + "Proporções da Borda Padrão:(%s) - Efeito Hover Padrão:(%s) - Tipo de Fonte Padrão:(%s)",
+			       IdPref, CorFundoPadrao, CorTextoPadrao, TamanhoPadrao, BordaPadrao, HoverPadrao, FontePadrao);
 	}
 	
 	public int getIdPref() {

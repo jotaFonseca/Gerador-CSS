@@ -47,7 +47,7 @@ public class UsuarioLoader implements ApplicationRunner {
 					if(campos.length == 5) {
 						Usuario usuario = new Usuario();
 			
-						usuario.setId(Integer.parseInt(campos[0]));
+						usuario.setId(Integer.valueOf(campos[0]));
 						usuario.setNome(campos[1]);
 						usuario.setEmail(campos[2]);
 						usuario.setSenha(campos[3]);

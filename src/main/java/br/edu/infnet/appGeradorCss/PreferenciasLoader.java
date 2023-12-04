@@ -47,7 +47,7 @@ public class PreferenciasLoader implements ApplicationRunner{
 	               if (campos.length == 7) {
 	                   Preferencias preferencias = new Preferencias();
 
-	                   preferencias.setIdPref(Integer.parseInt(campos[0]));
+	                   preferencias.setIdPref(Integer.valueOf(campos[0]));
 	                   preferencias.setCorFundoPadrao(campos[1]);
 	                   preferencias.setCorTextoPadrao(campos[2]);
 	                   preferencias.setTamanhoPadrao(campos[3]);

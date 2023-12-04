@@ -4,8 +4,17 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Usuario {
-	private int Id;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer Id;
+	
 	private String Nome;
 	private String Email;
 	private String Senha;
@@ -29,7 +38,10 @@ public class Usuario {
 	@Override
 	public String toString() {
 		SimpleDateFormat formatoData = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		String dataFormatada = formatoData.format(DataRegistro);
+		String dataFormatada = "";
+		if (DataRegistro != null) {
+			dataFormatada = formatoData.format(DataRegistro);
+		}
 		return String.format("ID Usuário:(%d) - Nome:(%s) - Email:(%s) - Senha: (%s) - Data Registro: (%s)", Id, Nome,
 				Email, Senha, dataFormatada);
 	}
