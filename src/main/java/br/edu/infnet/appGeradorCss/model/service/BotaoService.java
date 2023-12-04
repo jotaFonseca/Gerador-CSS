@@ -1,23 +1,24 @@
 package br.edu.infnet.appGeradorCss.model.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.appGeradorCss.model.domain.Botao;
+import br.edu.infnet.appGeradorCss.model.repositories.BotaoRepository;
 
 @Service
 public class BotaoService {
 	
-	private Map<Integer, Botao> mapa = new HashMap<Integer, Botao>();
+	@Autowired
+	private BotaoRepository botaoRepository;
 	
 	public void incluir(Botao botao) {
-		mapa.put(botao.getId(), botao);
+		botaoRepository.save(botao);
 	}
 	
 	public Collection<Botao> obterLista() {
-		return mapa.values();
+		return (Collection<Botao>) botaoRepository.findAll();
 	}
 }

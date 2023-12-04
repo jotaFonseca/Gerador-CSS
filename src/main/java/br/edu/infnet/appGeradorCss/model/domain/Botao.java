@@ -1,10 +1,15 @@
 package br.edu.infnet.appGeradorCss.model.domain;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
+import javax.persistence.Entity;
+
 import java.text.ParseException;
 
+@Entity
 public class Botao extends Usuario{
-	private int Id;
+	private Integer Id;
+	
 	private String NomeBotao;
 	private String CorFundo;
 	private String CorTexto;
@@ -18,7 +23,7 @@ public class Botao extends Usuario{
 		super();
 	}
 	
-    public Botao(int Id, String NomeBotao, String CorFundo, String CorTexto, String TamanhoBotao,
+    public Botao(Integer Id, String NomeBotao, String CorFundo, String CorTexto, String TamanhoBotao,
                               String Borda, String Hover, String Fonte, Date DataCriacao) {
     	super(Id);
     	

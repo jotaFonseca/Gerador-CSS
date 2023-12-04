@@ -8,8 +8,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,7 +30,7 @@ public class Usuario {
 		this.Id = Id;
 	}
 
-	public Usuario(int Id, String Nome, String Email, String Senha, Date DataRegistro) {
+	public Usuario(Integer Id, String Nome, String Email, String Senha, Date DataRegistro) {
 		this.Id = Id;
 		this.Nome = Nome;
 		this.Email = Email;

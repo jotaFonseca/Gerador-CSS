@@ -1,7 +1,11 @@
 package br.edu.infnet.appGeradorCss.model.domain;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Preferencias extends Usuario{
-	private int IdPref;
+	private Integer Id;
+	
 	private String CorFundoPadrao;
 	private String CorTextoPadrao;
 	private String TamanhoPadrao;
@@ -13,10 +17,10 @@ public class Preferencias extends Usuario{
 		super();
 	}
 	
-    public Preferencias(int IdPref, String corFundoPadrao, String corTextoPadrao,
+    public Preferencias(Integer Id, String corFundoPadrao, String corTextoPadrao,
             String tamanhoPadrao, String bordaPadrao, String hoverPadrao, String fontePadrao) {
 
-		this.IdPref = IdPref;
+		this.Id = Id;
 		this.CorFundoPadrao = corFundoPadrao;
 		this.CorTextoPadrao = corTextoPadrao;
 		this.TamanhoPadrao = tamanhoPadrao;
@@ -30,14 +34,14 @@ public class Preferencias extends Usuario{
 		return String.format(
 			       "ID Preferências:(%d) - Cor de Fundo Padrão: (%s) - Cor do Texto Padrão: (%s) - Tamanho Padrão:(%s)"
 			       + "Proporções da Borda Padrão:(%s) - Efeito Hover Padrão:(%s) - Tipo de Fonte Padrão:(%s)",
-			       IdPref, CorFundoPadrao, CorTextoPadrao, TamanhoPadrao, BordaPadrao, HoverPadrao, FontePadrao);
+			       Id, CorFundoPadrao, CorTextoPadrao, TamanhoPadrao, BordaPadrao, HoverPadrao, FontePadrao);
 	}
 	
-	public int getIdPref() {
-		return IdPref;
+	public int getId() {
+		return Id;
 	}
-	public void setIdPref(int idPref) {
-		IdPref = idPref;
+	public void setId(int id) {
+		Id = id;
 	}
 	public String getCorFundoPadrao() {
 		return CorFundoPadrao;

@@ -1,22 +1,24 @@
 package br.edu.infnet.appGeradorCss.model.service;
 
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import br.edu.infnet.appGeradorCss.model.domain.Preferencias;
+import br.edu.infnet.appGeradorCss.model.repositories.PreferenciasRepository;
 
 @Service
 public class PreferenciasService {
 	
-	private Map<Integer, Preferencias> mapa = new HashMap<Integer, Preferencias>();
+	@Autowired
+	private PreferenciasRepository preferenciasRepository;
 	
 	public void incluir(Preferencias preferencias) {
-		mapa.put(preferencias.getIdPref(), preferencias);
+		preferenciasRepository.save(preferencias);
 	}
 	
 	public Collection<Preferencias> obterLista() {
-		return mapa.values();
+		return (Collection<Preferencias>) preferenciasRepository.findAll();
 	}
 }

@@ -14,7 +14,6 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
-	
 	public void incluir(Usuario usuario) {
 		usuarioRepository.save(usuario);
 	}
