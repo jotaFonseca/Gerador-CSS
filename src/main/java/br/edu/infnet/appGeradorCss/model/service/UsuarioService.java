@@ -22,4 +22,8 @@ public class UsuarioService {
 		return (Collection<Usuario>) usuarioRepository.findAll();
 	}
 	
+	public void excluir(Integer id) {
+		usuarioRepository.deleteById(id);
+	}
+	
 }

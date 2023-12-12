@@ -3,13 +3,19 @@ package br.edu.infnet.appGeradorCss.model.domain;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -22,6 +28,14 @@ public class Usuario {
 	private String Email;
 	private String Senha;
 	protected Date DataRegistro;
+	
+	@OneToOne(cascade = CascadeType.DETACH)
+	@JoinColumn(name = "idPreferencias")
+	private Preferencias preferencias;
+	
+	@ManyToMany(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
+	@JoinColumn(name = "idBotao")
+	private List<Botao> botoes;
 
 	public Usuario() {
 	}
@@ -88,5 +102,21 @@ public class Usuario {
 	public void setDataRegistro(String dataRegistro) throws ParseException {
 		SimpleDateFormat formatoData = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 		DataRegistro = formatoData.parse(dataRegistro);
+	}
+	
+	public Preferencias getPreferencias() {
+		return preferencias;
+	}
+	
+	public void setPreferencias(Preferencias preferencias) {
+		this.preferencias = preferencias;
+	}
+	
+	public List<Botao> getBotoes() {
+		return botoes;
+	}
+	
+	public void setBotoes(List<Botao> botoes) {
+		this.botoes = botoes;
 	}
 }

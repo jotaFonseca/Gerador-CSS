@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.appGeradorCss.model.domain.Preferencias;
 import br.edu.infnet.appGeradorCss.model.service.PreferenciasService;
 
-@Order(2)
+@Order(3)
 @Component
 public class PreferenciasLoader implements ApplicationRunner{
 	
