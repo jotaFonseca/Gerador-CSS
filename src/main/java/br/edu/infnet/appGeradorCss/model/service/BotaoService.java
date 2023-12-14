@@ -21,4 +21,8 @@ public class BotaoService {
 	public Collection<Botao> obterLista() {
 		return (Collection<Botao>) botaoRepository.findAll();
 	}
+	
+	public void excluir(Integer id) {
+		botaoRepository.deleteById(id);
+	}
 }

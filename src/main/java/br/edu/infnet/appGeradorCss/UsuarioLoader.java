@@ -9,6 +9,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import br.edu.infnet.appGeradorCss.model.domain.Endereco;
 import br.edu.infnet.appGeradorCss.model.domain.Usuario;
 import br.edu.infnet.appGeradorCss.model.service.UsuarioService;
 
@@ -44,7 +45,7 @@ public class UsuarioLoader implements ApplicationRunner {
 				while (linha != null) {
 					String[] campos = linha.split(";");
 					
-					if(campos.length == 5) {
+					if(campos.length == 6) {
 						Usuario usuario = new Usuario();
 			
 						usuario.setId(Integer.valueOf(campos[0]));
@@ -52,6 +53,7 @@ public class UsuarioLoader implements ApplicationRunner {
 						usuario.setEmail(campos[2]);
 						usuario.setSenha(campos[3]);
 						usuario.setDataRegistro(campos[4]);
+						usuario.setEndereco(new Endereco(campos[5]));
 			
 						usuarioService.incluir(usuario);
 					} else {

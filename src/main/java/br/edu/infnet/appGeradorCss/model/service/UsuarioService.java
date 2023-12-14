@@ -5,6 +5,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import br.edu.infnet.appGeradorCss.model.domain.Endereco;
 import br.edu.infnet.appGeradorCss.model.domain.Usuario;
 import br.edu.infnet.appGeradorCss.model.repositories.UsuarioRepository;
 
@@ -13,8 +14,16 @@ public class UsuarioService {
 	
 	@Autowired
 	private UsuarioRepository usuarioRepository;
+	@Autowired
+	private EnderecoService enderecoService;
 	
 	public void incluir(Usuario usuario) {
+		String cep = usuario.getEndereco().getCep();
+		
+		Endereco endereco = enderecoService.buscarCep(cep);
+		
+		usuario.setEndereco(endereco);
+		
 		usuarioRepository.save(usuario);
 	}
 	

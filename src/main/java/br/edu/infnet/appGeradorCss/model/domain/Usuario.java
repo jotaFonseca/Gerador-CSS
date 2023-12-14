@@ -17,8 +17,20 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
+
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@JsonTypeInfo(
+		use = JsonTypeInfo.Id.NAME,
+		include = JsonTypeInfo.As.PROPERTY,
+		property = "tipo")
+@JsonSubTypes({
+	@JsonSubTypes.Type(value = Botao.class, name = "botao"),
+	@JsonSubTypes.Type(value = Preferencias.class, name = "preferencias")
+})
 public class Usuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,7 +47,13 @@ public class Usuario {
 	
 	@ManyToMany(cascade = CascadeType.DETACH, fetch = FetchType.EAGER)
 	@JoinColumn(name = "idBotao")
+	@JsonBackReference
 	private List<Botao> botoes;
+	
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "idEndereco")
+	private Endereco endereco;
+	
 
 	public Usuario() {
 	}
@@ -118,5 +136,13 @@ public class Usuario {
 	
 	public void setBotoes(List<Botao> botoes) {
 		this.botoes = botoes;
+	}
+	
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 }

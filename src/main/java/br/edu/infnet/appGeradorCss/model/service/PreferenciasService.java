@@ -21,4 +21,8 @@ public class PreferenciasService {
 	public Collection<Preferencias> obterLista() {
 		return (Collection<Preferencias>) preferenciasRepository.findAll();
 	}
+	
+	public void excluir(Integer id) {
+		preferenciasRepository.deleteById(id);
+	}
 }
